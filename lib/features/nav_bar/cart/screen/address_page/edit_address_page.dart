@@ -307,7 +307,7 @@ class _EditAddressPageState extends State<EditAddressPage> {
               Container(
                 width: double.infinity,
                 child: MaterialButton(onPressed: (){
-                  //Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SelectAddressPage()));
+                  Navigator.of(context).pop();
                 },shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),color: AppColors.primaryClr,child: Text("Save",style: jostMedium.copyWith(color: AppColors.white,fontSize: Dimensions.fontSizeSixteen),),),
               ),
             ],

@@ -2,20 +2,22 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:two_wheelers_bd/features/nav_bar/account/screen/user_profile.dart';
+import 'package:two_wheelers_bd/features/nav_bar/account/screen/addresses_page.dart';
+import 'package:two_wheelers_bd/features/nav_bar/account/screen/bike_info_page.dart';
+import 'package:two_wheelers_bd/features/nav_bar/account/screen/profile_info_page.dart';
 
 import '../../../../utils/colors.dart';
 import '../../../../utils/dimensions.dart';
 import '../../../../utils/styles.dart';
 
-class AccountPage extends StatefulWidget {
-  const AccountPage({super.key});
+class UserProfile extends StatefulWidget {
+  const UserProfile({super.key});
 
   @override
-  State<AccountPage> createState() => _AccountPageState();
+  State<UserProfile> createState() => _UserProfileState();
 }
 
-class _AccountPageState extends State<AccountPage> {
+class _UserProfileState extends State<UserProfile> {
   final ImagePicker _picker = ImagePicker();
   File? _image;
 
@@ -27,7 +29,6 @@ class _AccountPageState extends State<AccountPage> {
       });
     }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,30 +96,25 @@ class _AccountPageState extends State<AccountPage> {
                       radius: 50,
                       backgroundColor: Colors.grey[200],
                       backgroundImage:
-                          _image != null ? FileImage(_image!) : null,
+                      _image != null ? FileImage(_image!) : null,
                       child: _image == null
                           ? Icon(Icons.person,
-                              size: 80, color: Colors.grey[700])
+                          size: 80, color: Colors.grey[700])
                           : null,
                     ),
                   ),
                   SizedBox(
                     width: 15,
                   ),
-                  MaterialButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>UserProfile()));
-                    },
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                    color: AppColors.primaryClr,
-                    child: Text(
-                      "Sign in or register",
-                      style: jostMedium.copyWith(
-                          color: AppColors.white,
-                          fontSize: Dimensions.fontSizeSixteen),
-                    ),
-                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Anika Tabasum",style: jostSemiBold.copyWith(
+                          fontSize: Dimensions.fontSizeTwentyFour),),
+                      Text("xyz@gmail.com",style: jostMedium.copyWith(
+                          fontSize: Dimensions.fontSizeSixteen),)
+                    ],
+                  )
                 ],
               ),
               SizedBox(
@@ -128,7 +124,9 @@ class _AccountPageState extends State<AccountPage> {
                 color: AppColors.grey2.withOpacity(0.4),
               ),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProfileInfoPage()));
+                },
                 leading: Icon(Icons.person_2_outlined,size: 30,),
                 title: Text(
                   "Profile Info",
@@ -137,7 +135,9 @@ class _AccountPageState extends State<AccountPage> {
                 ),
               ),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>BikeInfoPage()));
+                },
                 leading: Icon(Icons.motorcycle_outlined,size: 30,),
                 title: Text(
                   "Your Bike Info",
@@ -146,7 +146,9 @@ class _AccountPageState extends State<AccountPage> {
                 ),
               ),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AddressesPage()));
+                },
                 leading: Icon(Icons.location_on_outlined,size: 30,),
                 title: Text(
                   "Addresses",
@@ -158,7 +160,7 @@ class _AccountPageState extends State<AccountPage> {
                 onTap: () {},
                 leading: Icon(Icons.list_alt,size: 30,),
                 title: Text(
-                  "Orders",
+                  "My Orders",
                   style: jostMedium.copyWith(
                       fontSize: Dimensions.fontSizeEighteen),
                 ),
@@ -167,7 +169,7 @@ class _AccountPageState extends State<AccountPage> {
                 onTap: () {},
                 leading: Icon(Icons.favorite_border,size: 30,),
                 title: Text(
-                  "Wishlist",
+                  "My Wishlist",
                   style: jostMedium.copyWith(
                       fontSize: Dimensions.fontSizeEighteen),
                 ),
@@ -199,7 +201,7 @@ class _AccountPageState extends State<AccountPage> {
                 title: Text(
                   "Help Center",
                   style: jostMedium.copyWith(
-                      fontSize: Dimensions.fontSizeEighteen,),
+                    fontSize: Dimensions.fontSizeEighteen,),
                 ),
               ),
               ListTile(
