@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:two_wheelers_bd/features/nav_bar/account/screen/user_profile.dart';
+import 'package:two_wheelers_bd/features/nav_bar/account/screen/profile/user_profile.dart';
 
 import '../../../../utils/colors.dart';
 import '../../../../utils/dimensions.dart';

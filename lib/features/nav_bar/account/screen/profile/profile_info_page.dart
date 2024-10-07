@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../utils/colors.dart';
-import '../../../../utils/dimensions.dart';
-import '../../../../utils/styles.dart';
+import '../../../../../utils/colors.dart';
+import '../../../../../utils/dimensions.dart';
+import '../../../../../utils/styles.dart';
 
 class ProfileInfoPage extends StatefulWidget {
   const ProfileInfoPage({super.key});

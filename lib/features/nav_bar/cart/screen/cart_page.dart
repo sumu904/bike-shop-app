@@ -27,7 +27,9 @@ class _CartPageState extends State<CartPage> {
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
           icon: Icon(Icons.arrow_back),
         ),
         title: Text("My Cart",

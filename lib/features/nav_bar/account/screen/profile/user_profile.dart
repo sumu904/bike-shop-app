@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:two_wheelers_bd/features/nav_bar/account/screen/addresses_page.dart';
 import 'package:two_wheelers_bd/features/nav_bar/account/screen/bike_info_page.dart';
-import 'package:two_wheelers_bd/features/nav_bar/account/screen/profile_info_page.dart';
+import 'package:two_wheelers_bd/features/nav_bar/account/screen/profile/profile_info_page.dart';
 
-import '../../../../utils/colors.dart';
-import '../../../../utils/dimensions.dart';
-import '../../../../utils/styles.dart';
+import '../../../../../utils/colors.dart';
+import '../../../../../utils/dimensions.dart';
+import '../../../../../utils/styles.dart';
+import '../orders/my_orders_page.dart';
 
 class UserProfile extends StatefulWidget {
   const UserProfile({super.key});
@@ -157,7 +158,9 @@ class _UserProfileState extends State<UserProfile> {
                 ),
               ),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyOrdersPage()));
+                },
                 leading: Icon(Icons.list_alt,size: 30,),
                 title: Text(
                   "My Orders",
