@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:two_wheelers_bd/features/nav_bar/account/screen/orders/tracking_cancel_page.dart';
 
 import '../../../../../utils/colors.dart';
 import '../../../../../utils/dimensions.dart';
@@ -89,7 +90,9 @@ class _CancelledPageState extends State<CancelledPage> {
                           shape: RoundedRectangleBorder(
                               borderRadius:
                               BorderRadius.circular(10)),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>TrackingCancelPage()));
+                          },
                           child: Text(
                             "Track Order",
                             style: jostMedium.copyWith(

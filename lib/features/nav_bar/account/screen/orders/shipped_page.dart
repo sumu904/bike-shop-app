@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:two_wheelers_bd/features/nav_bar/account/screen/orders/tracking_page.dart';
 
 import '../../../../../utils/colors.dart';
 import '../../../../../utils/dimensions.dart';
@@ -202,7 +203,9 @@ class _ShippedPageState extends State<ShippedPage> {
                           shape: RoundedRectangleBorder(
                               borderRadius:
                               BorderRadius.circular(10)),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>TrackingPage()));
+                          },
                           child: Text(
                             "Track Order",
                             style: jostMedium.copyWith(

@@ -4,6 +4,7 @@ import '../../../../../utils/colors.dart';
 import '../../../../../utils/dimensions.dart';
 import '../../../../../utils/styles.dart';
 import 'order_details_page.dart';
+import 'tracking_page.dart';
 
 class ProcessingPage extends StatefulWidget {
   const ProcessingPage({super.key});
@@ -204,7 +205,9 @@ class _ProcessingPageState extends State<ProcessingPage> {
                           shape: RoundedRectangleBorder(
                               borderRadius:
                               BorderRadius.circular(10)),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>TrackingPage()));
+                          },
                           child: Text(
                             "Track Order",
                             style: jostMedium.copyWith(

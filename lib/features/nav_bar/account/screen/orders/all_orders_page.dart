@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:two_wheelers_bd/features/nav_bar/account/screen/orders/order_details_page.dart';
+import 'package:two_wheelers_bd/features/nav_bar/account/screen/orders/tracking_cancel_page.dart';
+import 'package:two_wheelers_bd/features/nav_bar/account/screen/orders/tracking_page.dart';
 import 'package:two_wheelers_bd/features/nav_bar/cart/screen/cart_page.dart';
 
 import '../../../../../utils/colors.dart';
@@ -206,7 +208,9 @@ class _AllOrdersPageState extends State<AllOrdersPage> {
                             shape: RoundedRectangleBorder(
                                 borderRadius:
                                 BorderRadius.circular(10)),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>TrackingPage()));
+                            },
                             child: Text(
                               "Track Order",
                               style: jostMedium.copyWith(
@@ -400,7 +404,9 @@ class _AllOrdersPageState extends State<AllOrdersPage> {
                             shape: RoundedRectangleBorder(
                                 borderRadius:
                                 BorderRadius.circular(10)),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>TrackingPage()));
+                            },
                             child: Text(
                               "Track Order",
                               style: jostMedium.copyWith(
@@ -595,7 +601,9 @@ class _AllOrdersPageState extends State<AllOrdersPage> {
                             shape: RoundedRectangleBorder(
                                 borderRadius:
                                 BorderRadius.circular(10)),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>TrackingPage()));
+                            },
                             child: Text(
                               "Track Order",
                               style: jostMedium.copyWith(
@@ -676,7 +684,9 @@ class _AllOrdersPageState extends State<AllOrdersPage> {
                             shape: RoundedRectangleBorder(
                                 borderRadius:
                                 BorderRadius.circular(10)),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>TrackingCancelPage()));
+                            },
                             child: Text(
                               "Track Order",
                               style: jostMedium.copyWith(
